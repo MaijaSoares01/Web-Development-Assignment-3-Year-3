@@ -1,0 +1,70 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="default" extends="struts-default">
+
+	<action name="register" class="Register" method ="RegisterUser">
+		<result name="EMPTY">error/empty.html</result>
+        <result name="SUCCESS">/index.jsp</result>
+		<result name="STAFFNUMFORMAT">error/StaffFormat.html</result>
+		<result name="STAFFNUMTAKEN">error/takenNumber.html</result>
+		<result name="NOMATCHNAME">error/NoMatchName.html</result>
+		<result name="STAFFNOTEXIST">error/StaffExist.html</result>
+		<result name="NOMATCH">error/NoMatch.html</result>
+    </action>
+		
+	<action name="login" class="Login" method ="login">
+		<result name="ADMINSUCCESS">/AdminHomePage.jsp</result>
+        <result name="USERSUCCESS">/UserHomePage.jsp</result>
+		<result name="FAILURE">error/loginError.html</result>
+	</action>
+	
+	<action name="AddEmployee" class="Employee" method ="addEmployeePage">
+        <result name="SUCCESS">/AddEmployee.jsp</result>
+	</action>
+	
+	<action name="addEmp" class="Employee" method ="addEmployee">
+		<result name = "xmlMessage" type = "plaintext" > </result >
+	</action>
+	
+	<action name="CalculateTax" class="Employee" method ="calculateTaxPage">
+        <result name="SUCCESS">/CalculateTaxReport.jsp</result>
+	</action>
+	
+	<action name="calculateTaxReport" class="Employee" method ="CalculateTax">
+        <result name = "xmlMessage" type = "plaintext" > </result >
+	</action>
+	
+	<action name="ViewAllEmployeeTax" class="Employee" method ="allTax">
+        <result name = "xmlMessage" type = "plaintext" > </result >
+	</action>
+	
+	<action name="RemoveEmployee" class="Employee" method ="removeEmpPage">
+        <result name="SUCCESS">/RemoveEmployee.jsp</result>
+	</action>
+	
+	<action name="removeEmployee" class="Employee" method ="removeEmployee">
+        <result name = "xmlMessage" type = "plaintext" > </result >
+	</action>
+	
+	<action name="TotalTaxDueYear" class="Employee" method ="yearPage">
+        <result name="SUCCESS">/TaxYear.jsp</result>
+	</action>
+	
+	<action name="taxYear" class="Employee" method ="taxYear">
+        <result name = "xmlMessage" type = "plaintext" > </result >
+	</action>
+	
+	<action name="EmployeeTaxReports" class="Employee" method ="AnnualTax">
+        <result name = "xmlMessage" type = "plaintext" > </result >
+	</action>
+	
+	<action name="Logout" class="Login" method ="logOut">
+		<result name="SUCCESS">/LoggedOut.jsp</result>
+		<result name="FAILURE">error/logoutError.html</result>
+	</action>
+	
+    </package>
+</struts>

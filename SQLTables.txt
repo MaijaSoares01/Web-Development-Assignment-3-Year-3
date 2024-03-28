@@ -1,0 +1,26 @@
+CREATE TABLE Users (
+    staffnum varchar(15),
+    name varchar(30),
+    password varchar(30),
+    role varchar(30)
+);
+
+CREATE TABLE Employees(
+    staffnum varchar(15),
+    name varchar(30),
+    ppsnum varchar(15)
+);
+
+CREATE TABLE EmployeeTaxReports(
+    staffnum varchar(15),
+    name varchar(30),
+    year varchar(15),
+    grossSalary double,
+    tax double,
+    netSalary double
+);
+
+INSERT INTO Employees(staffnum , name, ppsnum) VALUES('12345', 'Nick Longford', '7821934AB');
+INSERT INTO Employees(staffnum , name, ppsnum) VALUES('67989', 'Timothy Howe', '6482657CK');
+INSERT INTO Employees(staffnum , name, ppsnum) VALUES('39053', 'Miley Finney', '6382046KL');
+INSERT INTO Employees(staffnum , name, ppsnum) VALUES('13456', 'Roxie Russell', '1590457PO');
